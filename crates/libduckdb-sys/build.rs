@@ -133,6 +133,10 @@ mod build_bundled {
         #[cfg(feature = "json")]
         add_extension(&mut cfg, &manifest, "json", &mut cpp_files, &mut include_dirs);
 
+        add_extension(&mut cfg, &manifest, "httpfs", &mut cpp_files, &mut include_dirs);
+        add_extension(&mut cfg, &manifest, "parquet", &mut cpp_files, &mut include_dirs);
+        add_extension(&mut cfg, &manifest, "excel", &mut cpp_files, &mut include_dirs);
+
         // duckdb/tools/pythonpkg/setup.py
         cfg.define("DUCKDB_EXTENSION_AUTOINSTALL_DEFAULT", "1");
         cfg.define("DUCKDB_EXTENSION_AUTOLOAD_DEFAULT", "1");
